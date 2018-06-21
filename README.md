@@ -1,4 +1,4 @@
-# Serverless Boilerplate with Offline PLugin
+# Serverless Boilerplate with Offline Plugin
 
 ## Prerequisite
 
