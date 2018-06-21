@@ -15,6 +15,7 @@ service: aws-nodejs
 
 plugins:
   - serverless-offline
+  - serverless-dynamodb-local
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
@@ -22,6 +23,18 @@ plugins:
 provider:
   name: aws
   runtime: nodejs6.10
+
+
+custom:
+  dynamodb:
+    start:
+      port: 8000
+    # inMemory: true
+      migrate: true
+    # seed: true
+    # dbPath: '/Users/akash/nodeworkspace/serverlessOffline/aws-nodejs/'
+    # Uncomment only if you already have a DynamoDB running locally
+    # noStart: true
 
 # you can overwrite defaults here
 #  stage: dev
@@ -63,6 +76,29 @@ functions:
     - http:
         path: users/create
         method: get
+
+  get:
+    handler: handler.get
+    events:
+    - http:
+        path: users/get
+        method: get
+
+resources:
+  Resources:
+    usersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: usersTable
+        AttributeDefinitions:
+          - AttributeName: email
+            AttributeType: S
+        KeySchema:
+          - AttributeName: email
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
