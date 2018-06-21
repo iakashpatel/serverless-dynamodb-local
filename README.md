@@ -1,4 +1,4 @@
-# Serverless Boilerplate with Offline PLugin
+# Serverless and DynamoDB Boilerplate Offline ready
 
 ## Prerequisite
 
@@ -15,7 +15,7 @@
   aws configure
   ```
 
-* JAVA Development KIT, get it for you platform from [Here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* JAVA Development KIT, get it for your platform from [Here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 ## Quick Start
 
