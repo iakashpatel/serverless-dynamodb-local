@@ -29,6 +29,16 @@ git clone https://github.com/iakashpatel/serverless-aws-boilerplate-offline.git
 ```
 npm install
 ```
+
+### Install Dynamodb locally with serverless
+* Install DynamoDB Local
+
+  ```
+  serverless dynamodb install
+  ```
+
+### Run Serverless
+
 * Run Server
 
 
@@ -44,11 +54,13 @@ npm install
     sls offline start.
     ```
 
+### Serverless Package Help
 - to list all the options for the plugin run:
 
 ```
 sls offline --help
 ```
+
 - Serverless url: ```http://localhost:3000/```
 - dynamo shell url: ```http://localhost:8000/shell/```
 
